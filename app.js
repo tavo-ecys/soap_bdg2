@@ -1,20 +1,20 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const hapi = require("hapi");
+const hapi = require('hapi');
+// Plugin para rutas del servidor
+const Routes = require('./routes/routes');
 
 const server = new hapi.Server();
 
+// Registro de routes en el servidor
+// server.register([Routes]);
+
 server.connection({ port: 9090 });
-//Defino ruta
-server.route({
-  method: "GET",
-  path: "/",
-  handler: (request, reply) => {
-    reply({ data: "Hola mundo XD" });
-  }
-});
-//Levanto server
-server.start(err => {
+// Defino ruta
+server.route(Routes.rutas);
+
+// Levanto server
+server.start((err) => {
   if (err) throw err;
   console.log(`Servidor levantado en: ${server.info.uri}`);
 });
