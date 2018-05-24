@@ -40,6 +40,22 @@ describe('Primera prueba funcional', () => {
     );
   });
 
+  it('GET Key1 desde Redis /', (done) => {
+    server.inject(
+      {
+        method: 'GET',
+        url: '/',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+      (res) => {
+        expect(res.result).to.be.exist('hola_mundo');
+        done();
+      },
+    );
+  });
+
   after((done) => {
     done();
   });

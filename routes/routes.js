@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       method: 'POST',
-      path: '/',
+      path: '/{idService}',
       config: {
         handler: Handlers.postHand,
       },
