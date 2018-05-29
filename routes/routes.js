@@ -4,7 +4,7 @@ module.exports = {
   rutas: [
     {
       method: 'GET',
-      path: '/',
+      path: '/{idService}',
       config: {
         handler: Handlers.indexHand,
       },
