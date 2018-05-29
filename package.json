@@ -10,7 +10,9 @@
   "dependencies": {
     "dotenv": "5.0.1",
     "hapi": "16.6.2",
-    "hapi-ioredis": "3.0.0"
+    "hapi-ioredis": "3.0.0",
+    "request": "2.83.0",
+    "request-promise": "4.2.2"
   },
   "devDependencies": {
     "code": "3.0.1",

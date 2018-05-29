@@ -22,6 +22,22 @@ const serverPort = process.env[`PORT_${process.env.NODE_ENV.toUpperCase()}`];
 server.connection({ port: serverPort });
 // Defino ruta
 server.route(Routes.rutas);
+
+// Ciclo de vida de petición ---------------------------
+
+server.ext('onPreHandler', (request, reply) => {
+  request.redis
+    .sismember(`${'lista'}:${process.env.NODE_ENV}`, request.params.idService)
+    .then((res) => {
+      const valor = res === 1;
+      if (valor) {
+        return reply.continue();
+      }
+      return reply({ data: 'Servicio no existe' });
+    })
+    .catch(err => reply(err));
+});
+
 // Registrar plugins de hapi
 server.register(hapiPlugins, (err) => {
   if (err) throw err;
