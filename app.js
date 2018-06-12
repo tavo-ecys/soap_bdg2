@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('./lib/db').db;
 
 const hapi = require('hapi');
 // Plugin para rutas del servidor

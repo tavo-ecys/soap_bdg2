@@ -9,7 +9,11 @@
   },
   "dependencies": {
     "dotenv": "5.0.1",
-    "hapi": "16.6.2"
+    "hapi": "16.6.2",
+    "soap": "0.24.0",
+    "soap-as-promised": "1.23.0",
+    "mongoose": "4.11.14",
+    "bluebird": "3.5.1"
   },
   "devDependencies": {
     "code": "3.0.1",

@@ -16,5 +16,19 @@ module.exports = {
         handler: Handlers.postHand,
       },
     },
+    {
+      method: 'POST',
+      path: '/test',
+      config: {
+        handler: Handlers.testHand,
+      },
+    },
+    {
+      method: 'POST',
+      path: '/install',
+      config: {
+        handler: Handlers.testHand,
+      },
+    },
   ],
 };
