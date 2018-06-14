@@ -8,12 +8,13 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bluebird": "3.5.1",
     "dotenv": "5.0.1",
     "hapi": "16.6.2",
-    "soap": "0.24.0",
-    "soap-as-promised": "1.23.0",
+    "lodash": "^4.17.10",
     "mongoose": "4.11.14",
-    "bluebird": "3.5.1"
+    "soap": "0.24.0",
+    "soap-as-promised": "1.23.0"
   },
   "devDependencies": {
     "code": "3.0.1",
